@@ -1,0 +1,14 @@
+all:smain
+
+
+smain: SeqList.o smain.o
+	gcc SeqList.o smain.o -g -o smain
+
+SeqList.o : SeqList.c
+	gcc SeqList.c -g -c -o SeqList.o
+smain.o : smain.c
+	gcc smain.c -g -c -o smain.o
+
+.PHONY:clean
+clean:
+	rm -f smain smain.o SeqList.o
